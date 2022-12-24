@@ -1,12 +1,12 @@
 <script setup>
-import SideBarApp from './SideBarApp.vue';
+import HeaderApp from './HeaderApp.vue';
 </script>
 
 <template>
 
 
   <div class="contenedor">
-    <SideBarApp />
+    <HeaderApp/>
     <div class="verde">
       <div>
         <h1>Do you want to relax or distract yourself for a moment? Try one of our sections.</h1>
@@ -17,17 +17,17 @@ import SideBarApp from './SideBarApp.vue';
       <div class="sections">
         <div class="section">
 
-          <img src="./icons/breath.png" alt="" srcset="">
+          <img src="../assets/img/breath.png" alt="" srcset="">
           <button></button>
         </div>
         <div class="section">
 
-          <img src="./icons/pinta.png" alt="" srcset="">
+          <img src="../assets/img/pinta.png" alt="" srcset="">
           <button></button>
         </div>
         <div class="section">
 
-          <img src="./icons/share.png" alt="" srcset="">
+          <img src="../assets/img/share.png" alt="" srcset="">
           <button></button>
         </div>
 

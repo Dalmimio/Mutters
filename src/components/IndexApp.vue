@@ -13,7 +13,7 @@
       </div>
 
       <div class="loguito">
-        <img src="./icons/logo.png" alt="" srcset="">
+        <img src="../assets/img/logo.png" alt="" srcset="">
       </div>
       <div>
         <h1> A place to relax.</h1>
@@ -50,7 +50,7 @@
   text-align: center;
   min-height: 100vh;
   justify-content: space-around;
-  background-image: url(./icons/fondo.png);
+  background-image: url(../assets/img/fondo.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
