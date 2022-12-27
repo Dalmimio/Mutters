@@ -1,12 +1,13 @@
 <script setup>
-import SideBarApp from './SideBarApp.vue';
+import HeaderApp from './HeaderApp.vue';
+
 </script>
 
 <template>
 
 
   <div class="contenedor">
-    <SideBarApp />
+    <HeaderApp />
     <div class="verde">
       <div>
         <h1>Just Breath</h1>

@@ -47,6 +47,11 @@ const router = createRouter({
       name: 'newpaint',
       component: () => import('../views/NewPainView.vue')
     },
+        {
+      path: '/muzzu',
+      name: 'muzzu',
+      component: () => import('../views/MuzzuView.vue')
+    },
   ]
 })
 

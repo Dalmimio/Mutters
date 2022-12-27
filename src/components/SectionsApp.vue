@@ -1,12 +1,16 @@
 <script setup>
 import HeaderApp from './HeaderApp.vue';
+
 </script>
 
 <template>
 
 
   <div class="contenedor">
-    <HeaderApp/>
+    <!--<HeaderApp/>-->
+    <div class="espacio-nav">
+
+    </div>
     <div class="verde">
       <div>
         <h1>Do you want to relax or distract yourself for a moment? Try one of our sections.</h1>
@@ -16,24 +20,27 @@ import HeaderApp from './HeaderApp.vue';
 
       <div class="sections">
         <div class="section">
-
-          <img src="../assets/img/breath.png" alt="" srcset="">
-          <button></button>
+          <RouterLink to="./circle">   <img src="../assets/img/breath.png" alt="" srcset="">
+            </RouterLink>
+       
+          
         </div>
         <div class="section">
-
-          <img src="../assets/img/pinta.png" alt="" srcset="">
-          <button></button>
+          <RouterLink to="./newpaint">   <img src="../assets/img/pinta.png" alt="" srcset="">
+            </RouterLink>
+         
+        
         </div>
         <div class="section">
 
           <img src="../assets/img/share.png" alt="" srcset="">
-          <button></button>
+          
         </div>
 
       </div>
       <div>
-        <button>Let's meet Muzzu!</button>
+        <RouterLink to="./muzzu">  <button>Let's meet Muzzu!</button></RouterLink>
+      
 
       </div>
 
@@ -49,6 +56,10 @@ import HeaderApp from './HeaderApp.vue';
 </template>
 
 <style scoped>
+  .espacio-nav{
+    width: 40vw;
+  }
+
 .sections {
 
   display: flex;
@@ -75,6 +86,7 @@ img {
   text-align: center;
   min-height: 100vh;
   justify-content: space-around;
+  padding: 2vh;
 }
 
 button {
@@ -82,8 +94,9 @@ button {
   height: 10vh;
   border: none;
   border-radius: 10px;
-  font-size: 4vh;
+  font-size: 3vh;
   color: white;
+  padding:2vh
 }
 
 
@@ -101,12 +114,36 @@ button {
 
 @media screen and (max-width: 425px) {
 
+
+
   .verde {
-    align-items: center;
-    width: 100%;
-    justify-content: space-around;
-    min-height: calc(100vh - 60px);
+        align-items: center;
+        width: 100%;
+        justify-content: space-around;
+        min-height:100vh;
+ }
+
+  .espacio-nav{
+    display: none;
   }
+
+  .sections {
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+img {
+  width: 20vh;
+  height: 20vh;
+}
+
+.section {
+  border-radius: 4px;
+  margin: 1px;
+}
 
 }
 </style>

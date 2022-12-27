@@ -20,7 +20,7 @@
       </div>
 
       <div><button>
-          <h1>Let's go!</h1>
+          <h2>Let's go!</h2>
         </button></div>
 
     </div>

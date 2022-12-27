@@ -1,3 +1,9 @@
+<script setup>
+
+</script>
+
+
+
 <template>
   <!DOCTYPE html>
   <html lang="en">
@@ -17,61 +23,57 @@
       <header class="sidebar-header">
 
       </header>
-      <nav>
+      <nav class="sin-texto">
         <button>
           <span>
-            <i class="material-symbols-outlined"> home </i>
-            <span>Home</span>
+            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3"  to="./"> <i class="material-symbols-outlined"> home </i>
+            <span class="text-oculto">Home</span></RouterLink>
+           
+          </span>
+        </button>
+        <button>
+          <span >
+            
+            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./about"> <i class="material-symbols-outlined"> tag </i>
+            <span class="text-oculto">About</span></RouterLink>
           </span>
         </button>
         <button>
           <span>
-            <i class="material-symbols-outlined"> tag </i>
-            <span>About</span>
+            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./about"> <i class="material-symbols-outlined"> notifications </i>
+            <span class="text-oculto">Forum</span></RouterLink>
           </span>
         </button>
         <button>
           <span>
-            <i class="material-symbols-outlined">
-              notifications
-            </i>
-            <span>Gallery</span>
+            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./contact"> <i class="material-symbols-outlined"> email </i>
+            <span class="text-oculto">Contact</span></RouterLink>
           </span>
         </button>
         <button>
           <span>
-            <i class="material-symbols-outlined"> email </i>
-            <span>Contact</span>
+            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./gallery"> <i class="material-symbols-outlined"> bookmark </i>
+            <span class="text-oculto">Gallery</span></RouterLink>
           </span>
         </button>
         <button>
           <span>
-            <i class="material-symbols-outlined"> bookmark </i>
-            <span>Activities</span>
+            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./login"> <i class="material-symbols-outlined"> person </i>
+            <span class="text-oculto">Login</span></RouterLink>
           </span>
         </button>
-        <button>
-          <span>
-            <i class="material-symbols-outlined"> person </i>
-            <span>Profile</span>
-          </span>
-        </button>
-        <button>
-          <span>
-            <i class="material-symbols-outlined"> expand_circle_down </i>
-            <span>More</span>
-          </span>
-        </button>
+     
 
 
         <button class="user-button">
           <span>
-            <img src="./icons/user.png" />
-            <span>
+            <img src="../assets/img/user.png" />
+            <span class="text-dark">
               <span class="fullname"> Name </span>
               <span class="username"> user </span>
             </span>
-            <i class="material-symbols-outlined"> more_vert </i>
+            <RouterLink to="./login"> <i class="material-symbols-outlined"> more_vert </i>
+            </RouterLink>
           </span>
         </button>
       </nav>
@@ -80,31 +82,28 @@
       <nav class="mobile-bottom-nav">
         <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
           <div class="mobile-bottom-nav__item-content">
-            <a class="btn botonera"> <img class="iconitos" src="./icons/home.png" alt="" srcset=""> </a>
+            <a class="btn botonera"> <img class="iconitos" src="../assets/img/home.png" alt="" srcset=""> </a>
 
           </div>
         </div>
         <div class="mobile-bottom-nav__item">
           <div class="mobile-bottom-nav__item-content">
-            <a class="btn botonera"><img class="iconitos" src="./icons/paint.png" alt="" srcset=""> </a>
+            <a class="btn botonera"><img class="iconitos" src="../assets/img/paint.png" alt="" srcset=""> </a>
 
           </div>
         </div>
         <div class="mobile-bottom-nav__item">
           <div class="mobile-bottom-nav__item-content">
-            <a class="btn botonera"> <img class="iconitos" src="./icons/profile.png" alt="" srcset=""> </a>
+            <a class="btn botonera"> <img class="iconitos" src="../assets/img/profile.png" alt="" srcset=""> </a>
 
           </div>
         </div>
 
-        <div class="mobile-bottom-nav__item">
-          <div class="mobile-bottom-nav__item-content">
-            <a class="botonera btn "><img class="iconitos" src="./icons/more.png" alt="" srcset=""> </a>
-
-          </div>
-        </div>
+  
       </nav>
     </div>
+
+   
   </body>
 
   </html>
@@ -113,6 +112,7 @@
 <style scoped>
 * {
   box-sizing: border-box;
+ 
 }
 
 body {
@@ -121,12 +121,20 @@ body {
   color: #ffffff;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Ubuntu, "Helvetica Neue", sans-serif;
+   
 }
+
+
 
 .iconitos {
   display: none
 }
 
+span > a{
+  text-decoration: none;
+  color:black
+
+}
 .material-symbols-outlined {
 
   font-size: 22px;
@@ -134,6 +142,7 @@ body {
   background-color: #CADEC8;
   border-radius: 50%;
   padding: 7px 7px;
+ 
 
 
 
@@ -141,14 +150,16 @@ body {
 }
 
 .sidebar {
-
+  position:fixed;
+  left:0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 40vh;
+  width: 30vw;
   height: 100%;
-  padding: 0px 10px 30px 10px;
+  padding: 0px 10px 30px 15px;
+ 
   border-right: 1px solid #CADEC8;
   background-color: #f5f5f5;
   font-family: 'Quicksand';
@@ -158,7 +169,7 @@ body {
 
 .sidebar-header {
   width: 100%;
-  background-image: url(./icons/logo.png);
+  background-image: url(../assets/img/logo.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -166,10 +177,24 @@ body {
   display: flex;
   justify-content: center;
   padding-top: 18vh;
-  background-size: 27vh;
+  background-size: 23vh;
 
 }
 
+.mobile-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    will-change: transform;
+    transform: translateZ(0);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
 
 
 
@@ -177,7 +202,7 @@ body {
 @media screen and (max-width: 577px) and (min-width: 425px) {
   .sidebar-header {
     width: 100%;
-    background-image: url(./icons/logopeque.png);
+    background-image: url(../assets/img/logopeque.png);
     background-repeat: no-repeat;
     background-position: center;
     background-repeat: no-repeat;
@@ -190,7 +215,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: 2vh;
+   
 
 
 
@@ -216,7 +241,7 @@ body {
   align-items: center;
   gap: 12px;
   height: 48px;
-  padding: 0 16px 0 12px;
+ 
   border-radius: 24px;
   line-height: 1;
 }
@@ -299,7 +324,18 @@ button.user-button span>i {
 
 @media (width < 580px) and (width > 425px) {
   .sidebar {
-    width: 72px;
+    width: 30vw;
+   
+  }
+  .text-oculto{
+    display: none;
+
+  }
+
+  .sin-texto{
+    display:flex;
+    justify-content: center;
+    align-items: center;
   }
 
 
@@ -349,6 +385,7 @@ button.user-button span>i {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+   
 
 
 
