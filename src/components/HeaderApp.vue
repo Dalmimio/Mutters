@@ -1,8 +1,20 @@
 <script setup>
+import { validateUserAndPass } from '../store/usersRegister.js'
+
+
+// console.log(validateUserAndPass.name);
+
+validateUserAndPass.name = localStorage.getItem('usuarioName')
+validateUserAndPass.photo = localStorage.getItem('usuarioPhoto')
+validateUserAndPass.email = localStorage.getItem('usuarioEmail')
+
+
+const logOut = () => {
+  localStorage.clear()
+  window.location.reload();
+}
 
 </script>
-
-
 
 <template>
   <!DOCTYPE html>
@@ -26,56 +38,88 @@
       <nav class="sin-texto">
         <button>
           <span>
-            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3"  to="./"> <i class="material-symbols-outlined"> home </i>
-            <span class="text-oculto">Home</span></RouterLink>
-           
-          </span>
-        </button>
-        <button>
-          <span >
-            
-            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./about"> <i class="material-symbols-outlined"> tag </i>
-            <span class="text-oculto">About</span></RouterLink>
-          </span>
-        </button>
-        <button>
-          <span>
-            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./about"> <i class="material-symbols-outlined"> notifications </i>
-            <span class="text-oculto">Forum</span></RouterLink>
-          </span>
-        </button>
-        <button>
-          <span>
-            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./contact"> <i class="material-symbols-outlined"> email </i>
-            <span class="text-oculto">Contact</span></RouterLink>
-          </span>
-        </button>
-        <button>
-          <span>
-            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./gallery"> <i class="material-symbols-outlined"> bookmark </i>
-            <span class="text-oculto">Gallery</span></RouterLink>
-          </span>
-        </button>
-        <button>
-          <span>
-            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./login"> <i class="material-symbols-outlined"> person </i>
-            <span class="text-oculto">Login</span></RouterLink>
-          </span>
-        </button>
-     
+            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./"> <i
+                class="material-symbols-outlined"> home </i>
+              <span class="text-oculto">Home</span>
+            </RouterLink>
 
-
-        <button class="user-button">
+          </span>
+        </button>
+        <button>
           <span>
-            <img src="../assets/img/user.png" />
-            <span class="text-dark">
-              <span class="fullname"> Name </span>
-              <span class="username"> user </span>
-            </span>
-            <RouterLink to="./login"> <i class="material-symbols-outlined"> more_vert </i>
+
+            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./about"> <i
+                class="material-symbols-outlined"> tag </i>
+              <span class="text-oculto">About</span>
             </RouterLink>
           </span>
         </button>
+        <button>
+          <span>
+            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./about"> <i
+                class="material-symbols-outlined"> notifications </i>
+              <span class="text-oculto">Forum</span>
+            </RouterLink>
+          </span>
+        </button>
+        <button>
+          <span>
+            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./contact"> <i
+                class="material-symbols-outlined"> email </i>
+              <span class="text-oculto">Contact</span>
+            </RouterLink>
+          </span>
+        </button>
+        <button>
+          <span>
+            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./gallery"> <i
+                class="material-symbols-outlined"> bookmark </i>
+              <span class="text-oculto">Gallery</span>
+            </RouterLink>
+          </span>
+        </button>
+
+        <button v-if="!validateUserAndPass.email">
+          <span>
+            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./login"> <i
+                class="material-symbols-outlined"> person </i>
+              <span class="text-oculto">Login</span>
+            </RouterLink>
+          </span>
+        </button>
+
+        <!-- <button v-if="!validateUserAndPass.email">
+          <span>
+            <img src="" class="rounded-5" />
+            <span class="text-dark d-flex flex-column gap-2">
+              <span class="fullname text-dark"> Name </span>
+              <span class="username text-dark"> Email </span>
+            </span>
+          </span>
+        </button> -->
+
+        <button v-if="validateUserAndPass.email" class="user-button">
+
+        </button>
+
+        <button v-if="validateUserAndPass.email" class="user-button mt-5">
+          <span>
+            <img :src="validateUserAndPass.photo" class="rounded-5" />
+            <span class="text-dark">
+              <span class="fullname text-dark"> {{ validateUserAndPass.name }} </span>
+              <span class="username text-dark">{{ validateUserAndPass.email }}</span>
+            </span>
+            <!-- <RouterLink to="./login"> <i class="material-symbols-outlined"> more_vert </i>
+            </RouterLink> -->
+          </span>
+          <div class="d-flex justify-content-center align-items-center mt-5">
+            <div @click="logOut" class="btn btn-danger rounded-2">
+              Log out
+            </div>
+          </div>
+        </button>
+        
+
       </nav>
     </aside>
     <div>
@@ -99,11 +143,11 @@
           </div>
         </div>
 
-  
+
       </nav>
     </div>
 
-   
+
   </body>
 
   </html>
@@ -112,7 +156,7 @@
 <style scoped>
 * {
   box-sizing: border-box;
- 
+
 }
 
 body {
@@ -121,7 +165,7 @@ body {
   color: #ffffff;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Ubuntu, "Helvetica Neue", sans-serif;
-   
+
 }
 
 
@@ -130,11 +174,11 @@ body {
   display: none
 }
 
-span > a{
+span>a {
   text-decoration: none;
-  color:black
-
+  color: black
 }
+
 .material-symbols-outlined {
 
   font-size: 22px;
@@ -142,7 +186,7 @@ span > a{
   background-color: #CADEC8;
   border-radius: 50%;
   padding: 7px 7px;
- 
+
 
 
 
@@ -150,8 +194,8 @@ span > a{
 }
 
 .sidebar {
-  position:fixed;
-  left:0;
+  position: fixed;
+  left: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -159,7 +203,7 @@ span > a{
   width: 30vw;
   height: 100%;
   padding: 0px 10px 30px 15px;
- 
+
   border-right: 1px solid #CADEC8;
   background-color: #f5f5f5;
   font-family: 'Quicksand';
@@ -182,18 +226,18 @@ span > a{
 }
 
 .mobile-bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    will-change: transform;
-    transform: translateZ(0);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  will-change: transform;
+  transform: translateZ(0);
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 
@@ -215,7 +259,7 @@ span > a{
     display: flex;
     justify-content: center;
     align-items: center;
-   
+
 
 
 
@@ -241,7 +285,7 @@ span > a{
   align-items: center;
   gap: 12px;
   height: 48px;
- 
+
   border-radius: 24px;
   line-height: 1;
 }
@@ -325,15 +369,16 @@ button.user-button span>i {
 @media (width < 580px) and (width > 425px) {
   .sidebar {
     width: 30vw;
-   
+
   }
-  .text-oculto{
+
+  .text-oculto {
     display: none;
 
   }
 
-  .sin-texto{
-    display:flex;
+  .sin-texto {
+    display: flex;
     justify-content: center;
     align-items: center;
   }
@@ -385,7 +430,7 @@ button.user-button span>i {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-   
+
 
 
 
