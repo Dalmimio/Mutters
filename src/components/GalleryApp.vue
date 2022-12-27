@@ -3,8 +3,10 @@
 
 import { onMounted } from 'vue';
 
-import HeaderApp from '../components/HeaderApp.vue'
+import NewComment from '../components/NewComment.vue'
+import Comments from '../components/Comments.vue'
 import traerPinturas from '../firebase/pinturas.js'
+
 
 import pinturas from '../store/pinturas';
 
@@ -46,9 +48,9 @@ onMounted(() => {
 
                 <p> {{ pintura.description }}</p>
 
+                <NewComment />
 
-
-
+                <Comments class="w-100" />
 
             </div>
 
