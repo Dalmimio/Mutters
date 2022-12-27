@@ -15,7 +15,8 @@ const profileStoreUserAndPass = reactive({
 // comprobar si usuario y pass ya estan registrados
 const validateUserAndPass = reactive({
     email: null,
-    pass: null
+    pass: null,
+    photo: null
 });
 
 export { profileStoreGoogle, profileStoreUserAndPass, validateUserAndPass }

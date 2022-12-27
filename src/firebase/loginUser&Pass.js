@@ -53,8 +53,13 @@ const signInUser = () => {
             onSnapshot(collection(db,"users"), (snapshot) =>{
                 snapshot.forEach(doc => { 
                     if(doc.data().email == validateUserAndPass.email){
+                        localStorage.setItem('usuarioName', doc.data().name)
+                        localStorage.setItem('usuarioPhoto', doc.data().photo)
+                        localStorage.setItem('usuarioEmail', doc.data().email)
                         validateUserAndPass.name = doc.data().name
-                        console.log(validateUserAndPass.name); 
+                        // validateUserAndPass.photo = doc.data().photo
+                        // validateUserAndPass.email = doc.data().email
+                        // console.log(validateUserAndPass.name); 
                     }
                     Swal.fire({
                         icon: 'success',
