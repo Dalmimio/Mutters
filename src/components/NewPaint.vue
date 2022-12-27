@@ -104,6 +104,17 @@ export default {
 </script>
 <template>
     <div id="appaint">
+    <form action="" class="d-flex flex-column form-ult">
+        <label for="">Title</label>
+        <input type="text" placeholder="Title" class="mb-4">
+        <label for="">Description</label>
+        <input type="text" placeholder="Description">
+        <div class="options gap-1 d-flex flex-column justify-content-center align-items-center mt-5">
+            <button>Send</button>
+            <p>or</p>
+            <button>Donwload</button>
+        </div>
+    </form>
       <canvas
         ref="myCanvas"
         id="myCanvas"
@@ -114,6 +125,7 @@ export default {
       ></canvas>
       <DrawingToolbar 
       @color-selection="setDrawingColor" @style-selection="setDrawingStyle"/>
+      
     </div>
   </template>
   
@@ -131,12 +143,33 @@ export default {
       justify-content: center;
       align-items: center;
       padding: 1rem;
-     
+      min-height: 100vh;
+      width: 100vw;
+      background-color: #f5f5f5;
+      gap: 1rem;
     }
     #myCanvas {
-      border: 1px solid grey;
+      border: 2px solid #3e7e55;
       background-color: #FFF;
       margin: 5px 0px 5px 5px;
       border-radius: 1rem;
+    }
+    .form-ult{
+        background-color: #AADCB6;
+        padding: 1rem;
+        height: 80vh;
+        border-radius: 15px;
+    }
+    .options button{
+        width: 9rem;
+        padding: 5px 10px;
+        border-radius: 10px;
+        border: none;
+    }
+    .form-ult input{
+        background-color: rgba(255, 255, 255, 0.329);
+        border: #3e7e55 1px solid;
+        padding: 5px;
+        border-radius: 15px;
     }
   </style>

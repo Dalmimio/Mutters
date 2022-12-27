@@ -97,7 +97,8 @@
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-      background-color: lightblue;
+      background-color: #AADCB6;
+      border-radius: 15px;
     }
     #color-selector {
       display: flex;
@@ -108,8 +109,8 @@
       z-index: 1;
     }
     #color-button {
-      height: 20%;
       width: 10rem;
+      padding: 5px 10px;
       border-radius: 5px;
       border: none;
       margin: 10px;
@@ -124,7 +125,6 @@
       flex: 1 0 20%;
       height: 50%;
       margin: 1px;
-      background-color: red;
     }
     #style-selector {
       display: flex;
@@ -142,13 +142,11 @@
       border-radius: 5px;
       border: none;
     }
-    label{
-      background-color: red;
-    }
+    
     #rangeLine{
       width: 80%;
       align-self: center;
-      color: red;
+      
     }
     
     
