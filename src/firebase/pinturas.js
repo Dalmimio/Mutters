@@ -11,6 +11,7 @@ const traerPinturas = () => {
     snapshot.forEach(doc => {
         const pintura = {
             id: doc.id,
+            autor: doc.data().autor,
             name: doc.data().nombre,
             description: doc.data().descripcion,
             urlImage: doc.data().url
