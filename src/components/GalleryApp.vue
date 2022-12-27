@@ -24,7 +24,7 @@ onMounted(() => {
 
 
 
-<div style="background-color: grey; height: 100vh; display: flex; font-family: 'Quicksand'; flex-direction: column;">
+<div style="background-color: #f5f5f5; height: 100vh; display: flex; font-family: 'Quicksand'; flex-direction: column;">
 
 
     <div class="title w-100 d-flex align-items-center justify-content-center"><h1>Exhibitions</h1></div>
@@ -35,7 +35,7 @@ onMounted(() => {
             <span style="font-weight: bold;">Author: </span>{{pintura.autor}}
             <img class="w-100" :src="pintura.urlImage">
 
-            <p>{{pintura.name}}</p>
+            <h4>{{pintura.name}}</h4>
 
         <p> {{pintura.description}}</p>
 
