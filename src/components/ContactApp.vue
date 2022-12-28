@@ -19,6 +19,8 @@ import HeaderApp from './HeaderApp.vue';
                         <button>Send</button>
                         <button type="reset">Reset</button></div>
                     <!-- <input type="hidden" name="_next" value=""> -->
+                    <!-- en value va la pagina para redirigir -->
+                    
                         <input type="hidden" name="_captcha" value="false">
                 </form>
                 <img src="../assets/img/enviando_mail.gif" alt="">
