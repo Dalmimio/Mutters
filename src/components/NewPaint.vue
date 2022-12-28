@@ -149,13 +149,14 @@ export default {
       margin: 0px;
       padding: 0px;
       box-sizing: border-box;
+      font-family: 'Quicksand';
     }
     .img-flecha{
-        width: 50px;
+        width: 100px;
         align-self: flex-start;
         position: absolute;
         left: 0;
-        margin-left: 1rem;
+        top: 0;
     }
     #appaint {
       display: flex;
