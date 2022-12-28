@@ -18,7 +18,7 @@ import HeaderApp from './HeaderApp.vue';
                     <div class="d-flex justify-content-evenly">
                         <button>Send</button>
                         <button type="reset">Reset</button></div>
-                    <!-- <input type="hidden" name="_next" value=""> -->
+                        <input type="hidden" name="_next" value="https://mutters.netlify.app/">
                     <!-- en value va la pagina para redirigir -->
                     
                         <input type="hidden" name="_captcha" value="false">
