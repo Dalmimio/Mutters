@@ -64,6 +64,7 @@ button {
   height: 5vh;
   border: none;
   border-radius: 10px;
+  padding: 5px 20px;
 }
 
 
