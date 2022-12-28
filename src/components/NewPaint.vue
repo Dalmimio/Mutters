@@ -1,6 +1,7 @@
 <script>
 import DrawingToolbar from './DrawToolBar.vue'
 
+
 export default {
   name: 'App',
   components: {
@@ -14,7 +15,7 @@ export default {
       isDrawing: false,
       color: 'rgb(0,0,0)',
       drawStyle: 'freehand',
-    //   lineWidth: 5
+   
     }
   },
   methods: {
@@ -53,6 +54,7 @@ export default {
     },
     drawLine(x1, y1, x2, y2) {
       let ctx = this.canvas
+      ctx.lineWidth = 3
       ctx.beginPath()
       ctx.strokeStyle = this.color
       ctx.moveTo(x1, y1)
@@ -61,7 +63,8 @@ export default {
       ctx.closePath()
     },
     drawRect(x1, y1, x2, y2) {
-      let ctx = this.canvas
+      let ctx = this.canvas      
+      ctx.lineWidth = 3
       ctx.beginPath()
       ctx.strokeStyle = this.color
       ctx.strokeRect(x1, y1, x2 - x1, y2 - y1);
@@ -69,6 +72,7 @@ export default {
     },
     drawCircle(x1, y1, x2, y2){
       let ctx = this.canvas
+      ctx.lineWidth = 3
       ctx.beginPath();
       let radius = Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
       ctx.strokeStyle = this.color
@@ -76,7 +80,8 @@ export default {
       ctx.stroke(); //fill -> forma rellena --- stroke -> solo linea
     },
     drawTriangle(x1, y1, x2, y2){  
-      let ctx = this.canvas       
+      let ctx = this.canvas  
+      ctx.lineWidth = 3     
       ctx.strokeStyle = this.color
       ctx.moveTo(x1, y1)
       ctx.lineTo(x2, y2)
@@ -92,7 +97,7 @@ export default {
     },
     donwload(){
         let canva = document.getElementById('myCanvas');
-        let dataURL = canva.toDataURL('image/jpg');
+        let dataURL = canva.toDataURL('image/jpg'); //LA DATA DE LA IMG EN BASE64
         console.log(dataURL);
         // let ctx = this.canvas.canvas.__vnode.ctx
         // console.log(this.canvas.canvas.__vnode.ctx);
@@ -101,7 +106,8 @@ export default {
         enlace.href = dataURL // pasando canvasData como valor del enlace href, esto convierte la img a Base64
         enlace.click();// haciendo clic en el enlace para descargar la imagen
   
-    }
+    },
+   
    
   },
   mounted() {
@@ -110,7 +116,9 @@ export default {
     canvas.height = window.innerHeight *0.8
     this.canvas = canvas.getContext('2d')
     
+    
   },
+
 }
 </script>
 
@@ -123,11 +131,11 @@ export default {
         
     <form action="" class="d-flex flex-column form-ult">
         <label for="">Title</label>
-        <input type="text" placeholder="Title" class="mb-4">
+        <input v-model="title" type="text" placeholder="Title" class="mb-4">
         <label for="">Description</label>
-        <input type="text" placeholder="Description">
+        <input v-model="description" type="text" placeholder="Description">
         <div class="options gap-1 d-flex flex-column justify-content-center align-items-center mt-5">
-            <button>Send</button>
+            <button @click.prevent="addPaint">Send</button>
             <p>or</p>
             <button @click.prevent="donwload">Donwload</button>
         </div>

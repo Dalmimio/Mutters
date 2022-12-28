@@ -16,7 +16,7 @@
           ></div>
         </div>
       </div>
-      <input type="range" name="" id="rangeLine">
+      <!-- <input type="range" name="" id="rangeLine"> -->
       <div id="style-selector">
         <button @click="selectStyle" class="style-button" value="freehand">
           Brush
@@ -30,10 +30,10 @@
         <button @click="selectStyle" class="style-button" value="triangle">
           Triangle
         </button>
-        <label for="fillColor">
+        <!-- <label for="fillColor">
           Fill Color
           <input @click="selectWidth" type="checkbox" id="fillColor">
-        </label>
+        </label> -->
         
       </div>
     </div>
@@ -84,7 +84,7 @@
           this.$emit('style-selection', e.target.value)
         },
        selectWidth(e){
-        this.$emit('width-selected', e.target.checked)
+        this.$emit('width-selected', e.target.value)
        }
       },
     }
