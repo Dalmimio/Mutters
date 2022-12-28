@@ -136,8 +136,6 @@ export default {
       this.title = ''
       this.descripcion = ''
     }
-   
-   
   },
   mounted() {
     let canvas = this.$refs['myCanvas']

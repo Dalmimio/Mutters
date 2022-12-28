@@ -145,12 +145,11 @@ const logOut = () => {
         <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
           <div class="mobile-bottom-nav__item-content">
             <RouterLink to="./sticky"><img class="iconitos" src="../assets/img/home_icon.png" alt="" srcset=""></RouterLink> 
-
           </div>
         </div>
         <div class="mobile-bottom-nav__item">
           <div class="mobile-bottom-nav__item-content">
-           <RouterLink to="./newpaint"><img class="iconitos" src="../assets/img/paint_icon.png" alt="" srcset=""></RouterLink> 
+          <RouterLink to="./newpaint"><img class="iconitos" src="../assets/img/paint_icon.png" alt="" srcset=""></RouterLink> 
 
           </div>
         </div>
