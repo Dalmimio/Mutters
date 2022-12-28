@@ -5,6 +5,7 @@ import { validateUserAndPass } from '../store/usersRegister.js'
 // console.log(validateUserAndPass.name);
 
 validateUserAndPass.name = localStorage.getItem('usuarioName')
+validateUserAndPass.Lname = localStorage.getItem('usuarioLname')
 validateUserAndPass.photo = localStorage.getItem('usuarioPhoto')
 validateUserAndPass.email = localStorage.getItem('usuarioEmail')
 
@@ -94,8 +95,8 @@ const logOut = () => {
 
         <button v-if="!validateUserAndPass.email">
           <span>
-            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./login"> <i
-                class="material-symbols-outlined"> person </i>
+            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./login">
+              <i class="material-symbols-outlined"> person </i>
               <span class="text-oculto">Login</span>
             </RouterLink>
           </span>
@@ -111,27 +112,31 @@ const logOut = () => {
           </span>
         </button> -->
 
-        <button v-if="validateUserAndPass.email" class="user-button">
+        <!-- <button v-if="validateUserAndPass.email" class="user-button">
 
-        </button>
+        </button> -->
 
         <button v-if="validateUserAndPass.email" class="user-button mt-5">
-          <span>
-            <img :src="validateUserAndPass.photo" class="rounded-5" />
-            <span class="text-dark">
-              <span class="fullname text-dark"> {{ validateUserAndPass.name }} </span>
-              <span class="username text-dark">{{ validateUserAndPass.email }}</span>
-            </span>
-            <!-- <RouterLink to="./login"> <i class="material-symbols-outlined"> more_vert </i>
+          <RouterLink to="/profile">
+            <span class="d-flex gap-4">
+              <img :src="validateUserAndPass.photo" class="rounded-5" />
+              <span class="text-dark">
+                <span class="fullname text-dark"> {{ validateUserAndPass.name }} {{ validateUserAndPass.Lname }}</span>
+                <span class="username text-dark">{{ validateUserAndPass.email }}</span>
+              </span>
+              <!-- <RouterLink to="./login"> <i class="material-symbols-outlined"> more_vert </i>
             </RouterLink> -->
-          </span>
-          <div class="d-flex justify-content-center align-items-center mt-5">
-            <div @click="logOut" class="btn btn-danger rounded-2">
+            </span>
+          </RouterLink>
+        </button>
+        <button v-if="validateUserAndPass.email" class="mt-0">
+          <div class="d-flex justify-content-center align-items-center">
+            <div @click="logOut" class="btn colorBotonOut rounded-2">
               Log out
             </div>
           </div>
         </button>
-        
+
 
       </nav>
     </aside>
@@ -187,7 +192,9 @@ body {
 
 }
 
-
+.colorBotonOut {
+  background-color: #3e7e55;
+}
 
 .iconitos {
   display: none
@@ -205,10 +212,6 @@ span>a , Routerlink {
   background-color: #CADEC8;
   border-radius: 50%;
   padding: 7px 7px;
-
-
-
-
 
 }
 

@@ -55,9 +55,13 @@ const signOut = () => {
 <template >
 
   <body class="d-flex flex-column gap-2 p-3 ">
-    <div class="px-lg-5">
-      <RouterLink to="/" class="btn btn-secondary"> Return </RouterLink>
-    </div>
+    <RouterLink class="" to="/sticky">
+      <img class="img-flecha" src="../assets/img/flecha.png" alt="back">
+  </RouterLink>
+    <!-- <div class="px-lg-5">
+      <RouterLink to="/sticky" class="btn btn-secondary"> Return </RouterLink>
+    </div> -->
+    
     <div v-if="!profileStoreUserAndPass.email || !profileStoreGoogle.user"
       class="d-flex flex-column justify-content-center align-items-center">
 
@@ -140,6 +144,11 @@ body {
 
 .div1_1 {
   background-color: #CADEC8;
+}
+
+.img-flecha{
+  width: 100px;
+  align-self: flex-start;
 }
 
 .botonSign {

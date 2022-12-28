@@ -13,7 +13,7 @@ function myGreeting() {
 }
 
 function myGreeting2() {
-    document.location.pathname = "/circle"
+    document.location.pathname = "/sticky"
 }
 
 const signUpUser = () => {
@@ -32,6 +32,7 @@ const signUpUser = () => {
 
             const newUser = {
                 name: profileStoreUserAndPass.name,
+                Lname: profileStoreUserAndPass.Lname,
                 email: profileStoreUserAndPass.email,
                 photo: profileStoreUserAndPass.photo
             };
@@ -54,6 +55,7 @@ const signInUser = () => {
                 snapshot.forEach(doc => { 
                     if(doc.data().email == validateUserAndPass.email){
                         localStorage.setItem('usuarioName', doc.data().name)
+                        localStorage.setItem('usuarioLname', doc.data().Lname)
                         localStorage.setItem('usuarioPhoto', doc.data().photo)
                         localStorage.setItem('usuarioEmail', doc.data().email)
                         validateUserAndPass.name = doc.data().name
@@ -72,7 +74,9 @@ const signInUser = () => {
         })
         .catch((r) => {
             console.log(r);
+            // let src = "../assets/img/cuatrocientoscuatro.gif"
             Swal.fire({
+                // text: "<img src='" + src + "' style='width:150px;'>",
                 icon: 'error',
                 title: "Invalid email or password, please try again.",
             })

@@ -22,8 +22,9 @@ const Lname = ref('')
 
 
 
-const SignUp = (n, e, p) => {
+const SignUp = (n, ln, e, p) => {
     profileStoreUserAndPass.name = n
+    profileStoreUserAndPass.Lname = ln
     profileStoreUserAndPass.email = e
     profileStoreUserAndPass.pass = p
 
@@ -34,9 +35,6 @@ const SignUp = (n, e, p) => {
     email.value = ''
     pass1.value = ''
     pass2.value = ''
-
-
-
 
 }
 
@@ -60,9 +58,12 @@ const signOut = () => {
 <template >
 
     <body class="d-flex flex-column gap-2 p-3">
-        <div class="px-lg-5">
+        <RouterLink class="" to="/login">
+            <img class="img-flecha" src="../assets/img/flecha.png" alt="back">
+        </RouterLink>
+        <!-- <div class="px-lg-5">
             <RouterLink to="/login" class="btn btn-secondary"> Return </RouterLink>
-        </div>
+        </div> -->
         <div v-if="!profileStoreUserAndPass.email || !profileStoreGoogle.user"
             class="d-flex flex-column justify-content-center align-items-center">
             <div class="allForm d-flex flex-column justify-content-center p-2 m-0">
@@ -101,7 +102,7 @@ const signOut = () => {
                         </div>
 
                         <RouterLink to="/login" id="retardoLink" class="d-flex justify-content-center">
-                            <button @click.prevent="SignUp(name, email, pass1)" type="submit"
+                            <button @click.prevent="SignUp(name, Lname, email, pass1)" type="submit"
                                 :class="name && Lname && email && pass1 == pass2 && pass1 != '' ? 'btn btn-success' : 'btn btn-success disabled'">Sign
                                 Up</button>
 
@@ -142,6 +143,11 @@ body {
 .div1_1 {
     background-color: #CADEC8;
 }
+
+.img-flecha{
+    width: 100px;
+    align-self: flex-start;
+  }
 
 .botonG {
     border: 2px solid #3E7E55;

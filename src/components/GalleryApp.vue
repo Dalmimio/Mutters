@@ -15,18 +15,21 @@ onMounted(() => {
 
 </script>
 
-<template>
+<template style="background-color: #f5f5f5">
 
 
-  <div id="new_gallery" class="contenedor">
-    <HeaderApp />
-    <div class="verde">
-      <div class="espacio-nav">
-
-        <div>
 
 
-          <div>
+
+
+
+
+
+    <div
+        style="background-color: #f5f5f5; height: 100vh; display: flex; font-family: 'Quicksand'; flex-direction: column;">
+
+
+        <div class="title w-100 d-flex flex-column align-items-center justify-content-center text-center">
             <h1>Exhibitions</h1>
             <h5>Browse and comment on shared paintings or</h5>
             <button class="btn btn-primary mt-2">create your own</button>
@@ -46,7 +49,7 @@ onMounted(() => {
 
               <NewComment />
 
-              <Comments class="w-100" />
+                <Comments class="w-100" />
 
             </div>
 
