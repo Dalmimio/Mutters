@@ -32,7 +32,7 @@
         </button>
         <label for="fillColor">
           Fill Color
-          <input v-model="line" @click="selectWidth" type="checkbox" id="fillColor">
+          <input @click="selectWidth" type="checkbox" id="fillColor">
         </label>
         
       </div>
