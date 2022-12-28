@@ -39,7 +39,7 @@ import HeaderApp from './HeaderApp.vue';
 
       </div>
       <div>
-        <RouterLink to="./muzzu">  <button>Let's meet Muzzu!</button></RouterLink>
+        <a href="#muzzu">  <button>Let's meet Muzzu!</button></a>
       
 
       </div>
