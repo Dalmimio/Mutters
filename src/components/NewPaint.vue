@@ -1,6 +1,6 @@
 <script>
 import DrawingToolbar from './DrawToolBar.vue'
-
+import addPaint from '../firebase/PostPaint'
 
 export default {
   name: 'App',
@@ -15,6 +15,8 @@ export default {
       isDrawing: false,
       color: 'rgb(0,0,0)',
       drawStyle: 'freehand',
+      title: ' ',
+      descripcion: ' ',
    
     }
   },
@@ -107,6 +109,21 @@ export default {
         enlace.click();// haciendo clic en el enlace para descargar la imagen
   
     },
+    addPaint(){
+      let canva = document.getElementById('myCanvas');
+        
+      let newPaint={
+        name: 'name.value',
+        email: 'prueba',
+        title: this.title,
+        description: this.descripcion,
+        img: canva.toDataURL('image/jpg')
+      }
+      addPaint(newPaint)
+      console.log(newPaint);
+      this.title = ''
+      this.descripcion = ''
+    }
    
    
   },
@@ -135,7 +152,7 @@ export default {
         <label for="">Description</label>
         <input v-model="description" type="text" placeholder="Description">
         <div class="options gap-1 d-flex flex-column justify-content-center align-items-center mt-5">
-            <button @click.prevent="addPaint">Send</button>
+            <button @click.prevent="addPaint">Publish</button>
             <p>or</p>
             <button @click.prevent="donwload">Donwload</button>
         </div>

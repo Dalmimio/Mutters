@@ -9,7 +9,7 @@ import HeaderApp from './HeaderApp.vue';
         <HeaderApp/>
         <div class="hola d-flex flex-column align-items-center justify-content-center">
             <h1>Contact with Mutters</h1>
-            <div class="d-flex align-items-center flex-row-reverse">
+            <div class="d-flex align-items-center flex-row-reverse flex-wrap">
                 <form action="https://formsubmit.co/smartech.jade@gmail.com" method="POST" class="d-flex flex-column">
                     <input type="text" placeholder="Name" id="name" name="name" required>
                     <input type="text" placeholder="Email" id="mail" name="email" required>
