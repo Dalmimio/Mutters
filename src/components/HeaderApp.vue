@@ -48,10 +48,10 @@ const logOut = () => {
         <button>
           <span>
 
-            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./about"> <i
+            <a class="w-100 d-flex justify-content-center align-items-center gap-3" href="#about_mutters"> <i
                 class="material-symbols-outlined"> tag </i>
               <span class="text-oculto">About</span>
-            </RouterLink>
+            </a>
           </span>
         </button>
         <button>
@@ -200,7 +200,7 @@ span>a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 30vw;
+  width: 25vw;
   height: 100%;
   padding: 0px 10px 30px 15px;
 
@@ -221,7 +221,7 @@ span>a {
   display: flex;
   justify-content: center;
   padding-top: 18vh;
-  background-size: 23vh;
+  background-size: 90%;
 
 }
 

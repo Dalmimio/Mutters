@@ -40,13 +40,13 @@ import HeaderApp from '../components/HeaderApp.vue';
 
 <style scoped>
   .espacio-nav{
-    width: 40vw;
+    width: 25vw;
   }
 .verde {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 75vw;
     text-align: center;
     min-height: 100vh;
     justify-content: space-around;

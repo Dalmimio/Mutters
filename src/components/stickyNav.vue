@@ -3,16 +3,23 @@ import HeaderApp from './HeaderApp.vue';
 import SectionsApp from './SectionsApp.vue';
 import MuzzuApp from './MuzzuApp.vue';
 import AboutApp from './AboutApp.vue';
+import AboutSmartechApp from './AboutSmartechApp.vue';
+import IndexApp from './IndexApp.vue';
 
 </script>
 
 <template>
+  
     <HeaderApp/>
-    <div>
+
+   
+    <div> 
     <SectionsApp/>
     <MuzzuApp/>
     <AboutApp/>
+    <AboutSmartechApp/>
     </div> 
+   
 </template>
 
 <style scoped>

@@ -5,7 +5,7 @@ import HeaderApp from '../components/HeaderApp.vue';
 <template>
 
 
-    <div class="contenedor">
+    <div id="about_mutters" class="contenedor">
       <!--  <HeaderApp />-->
       <div class="espacio-nav">
 
@@ -31,10 +31,11 @@ import HeaderApp from '../components/HeaderApp.vue';
                 </div>
                 <div class="section_two">
                     <img src="../assets/img/pintando.gif" alt="" srcset="">
-                    <div class="text">What do you think if we draw for a while?
+                    <div class="text">What do you think if we <RouterLink to="./newpaint">draw</RouterLink> for a while?
                         The important thing is that you free your mind through creativity.
                         Express yourself and see how others do it, connect and comment on their drawings!
-                        Visit the forum in the gallery></div>
+                        Visit the forum in the <RouterLink to="./gallery">gallery.</RouterLink>
+                    </div>
                 </div>
 
             </div>
@@ -52,7 +53,7 @@ import HeaderApp from '../components/HeaderApp.vue';
 
 <style scoped>
   .espacio-nav{
-    width: 40vw;
+    width: 25vw;
   }
 .sections {
     display: flex;
@@ -80,11 +81,18 @@ import HeaderApp from '../components/HeaderApp.vue';
     margin: 2vh;
 }
 
+a{
+    color: black;
+    
+ 
+
+}
+
 .verde {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 75vw;
     text-align: center;
     min-height: 100vh;
     justify-content: space-around;

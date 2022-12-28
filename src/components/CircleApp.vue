@@ -9,6 +9,9 @@ import HeaderApp from './HeaderApp.vue';
   <div class="contenedor">
     <HeaderApp />
     <div class="verde">
+      <div class="espacio-nav">
+
+</div>
       <div>
         <h1>Just Breath</h1>
       </div>
@@ -41,15 +44,20 @@ import HeaderApp from './HeaderApp.vue';
 </template>
 
 <style scoped>
+  .espacio-nav{
+    width: 25vw;
+  }
 .verde {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 75vw;
   text-align: center;
   min-height: 100vh;
   justify-content: space-around;
+  padding: 2vh;
 }
+
 
 button {
   background-color: #7abd87;
@@ -63,6 +71,7 @@ button {
 .contenedor {
 
   display: flex;
+  justify-content: flex-end;
 
   font-family: 'Quicksand';
 }

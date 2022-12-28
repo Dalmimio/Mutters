@@ -19,9 +19,13 @@
         <h1> A place to relax.</h1>
       </div>
 
-      <div><button>
+      <div>
+        <RouterLink to="./sticky">
+          <button>
           <h2>Let's go!</h2>
-        </button></div>
+        </button>
+        </RouterLink>
+      </div>
 
     </div>
 

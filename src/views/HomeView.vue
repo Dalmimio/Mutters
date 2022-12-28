@@ -12,18 +12,8 @@ import SectionsApp from '../components/SectionsApp.vue';
 <template>
 
 
-<stickyNav/>
-    <!--   <IndexApp />
-        <div>
-                <HeaderApp />
-                <div>
-                        <SectionsApp />
-                        <MuzzuApp />
-                        <AboutApp />
-                </div>
-        </div>
-        --> 
-
+<IndexApp/>
+   
 </template>
 
 <style scoped>

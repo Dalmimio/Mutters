@@ -13,33 +13,39 @@ import HeaderApp from './HeaderApp.vue';
     </div>
     <div class="verde">
       <div>
-        <h1>Do you want to relax or distract yourself for a moment? Try one of our sections.</h1>
+        <h1>We are Smartech.</h1>
       </div>
 
 
 
       <div class="sections">
         <div class="section">
-          <RouterLink to="./circle">   <img src="../assets/img/breath.png" alt="" srcset="">
-            </RouterLink>
+          <img src="../assets/img/dali.png" alt="" srcset="">
+           
        
           
         </div>
         <div class="section">
-          <RouterLink to="./newpaint">   <img src="../assets/img/pinta.png" alt="" srcset="">
-            </RouterLink>
+        <img src="../assets/img/ale.png" alt="" srcset="">
+          
          
         
         </div>
         <div class="section">
 
-          <img src="../assets/img/share.png" alt="" srcset="">
-          
-        </div>
+<img src="../assets/img/lean.png" alt="" srcset="">
+
+</div>
+
+<div class="section">
+
+<img src="../assets/img/joha.png" alt="" srcset="">
+
+</div>
 
       </div>
       <div>
-        <RouterLink to="./muzzu">  <button>Let's meet Muzzu!</button></RouterLink>
+        <RouterLink to="./muzzu">  <button>Your solution just a click away.</button></RouterLink>
       
 
       </div>
@@ -104,7 +110,7 @@ button {
 .contenedor {
 
   display: flex;
-  background-color: #cadec8;
+  background-color: white;
   font-family: 'Quicksand';
 }
 

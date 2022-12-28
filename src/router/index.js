@@ -52,6 +52,11 @@ const router = createRouter({
       name: 'muzzu',
       component: () => import('../views/MuzzuView.vue')
     },
+    {
+      path: '/sticky',
+      name: 'sticky',
+      component: () => import('../views/StickyNavView.vue')
+    },
   ]
 })
 
