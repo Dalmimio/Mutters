@@ -5,7 +5,7 @@ import HeaderApp from '../components/HeaderApp.vue';
 <template>
 
 
-    <div class="contenedor">
+    <div id="muzzu" class="contenedor">
         <!-- <HeaderApp />-->
         <div class="espacio-nav">
 

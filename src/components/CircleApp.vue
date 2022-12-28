@@ -6,7 +6,7 @@ import HeaderApp from './HeaderApp.vue';
 <template>
 
 
-  <div class="contenedor">
+  <div id="circle" class="contenedor">
     <HeaderApp />
     <div class="verde">
       <div class="espacio-nav">
