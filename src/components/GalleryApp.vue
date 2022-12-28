@@ -37,7 +37,7 @@ onMounted(() => {
 
             <h1>Exhibitions</h1>
             <h2>Browse and comment on shared paintings or</h2>
-            <RouterLink to="./newpaint"><button class="btn btn-primary mt-2">Create your own <img class="lapicito" src="../assets/img/paint_icon.png" alt="" srcset="">  </button></RouterLink>
+            <RouterLink to="./newpaint"><button class="btn btn-primary mt-2 create">Create your own <img class="lapicito" src="../assets/img/paint_icon.png" alt="">  </button></RouterLink>
             
           </div>
 
@@ -55,14 +55,12 @@ onMounted(() => {
             </div>
 
 
-              <h2>{{ pintura.name }}</h2>
+              <h3>{{ pintura.name }}</h3>
 
-              <h4> {{ pintura.description }}</h4>
+              <h5> {{ pintura.description }}</h5>
 
 
-              <NewComment />
-
-           
+              <!-- <NewComment /> -->          
 
             </div>
 
@@ -172,7 +170,12 @@ button {
   justify-content: center;
 }
 
-
+a{
+  text-decoration: none;
+}
+button:hover{
+  background-color: #3E7E55;
+}
 
 .contenedor {
 

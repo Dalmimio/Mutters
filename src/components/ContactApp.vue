@@ -9,13 +9,13 @@ import HeaderApp from './HeaderApp.vue';
         <HeaderApp/>
         <div class="hola d-flex flex-column align-items-center justify-content-center">
             <h1>Contact with Mutters</h1>
-            <div class="d-flex align-items-center flex-row-reverse flex-wrap">
+            <div class="d-flex align-items-center flex-row-reverse flex-wrap contenedor">
                 <form action="https://formsubmit.co/smartech.jade@gmail.com" method="POST" class="d-flex flex-column">
                     <input type="text" placeholder="Name" id="name" name="name" required>
                     <input type="text" placeholder="Email" id="mail" name="email" required>
                     <input type="text" placeholder="Subject" id="subjet" name="subjet">
                     <textarea name="message" id="message" cols="30" rows="5" placeholder="Message" required></textarea>
-                    <div class="d-flex justify-content-evenly">
+                    <div class="d-flex justify-content-evenly gap-1">
                         <button>Send</button>
                         <button type="reset">Reset</button></div>
                         <input type="hidden" name="_next" value="https://mutters.netlify.app/">
@@ -65,5 +65,30 @@ import HeaderApp from './HeaderApp.vue';
     }
     img{
         width: 30vw;
+    }
+
+    @media screen and (max-width: 1000px){
+        .contenedor{
+            flex-direction: column-reverse !important;
+            width: 80%;
+
+        }
+        
+        form{
+            width: 80%;
+            justify-content: center;
+            align-items: center;
+        }
+        textarea, input{
+            width: 90% !important;
+        }
+        button{
+            width: 20vw;
+        }
+    }
+    @media screen and (max-width: 425px) {
+        .hola{
+            width: 100vw;
+        }
     }
 </style>

@@ -1,6 +1,17 @@
 <script>
 import DrawingToolbar from './DrawToolBar.vue'
 import addPaint from '../firebase/PostPaint'
+import { validateUserAndPass } from '../store/usersRegister.js'
+
+
+// console.log(validateUserAndPass.name);
+
+validateUserAndPass.name = localStorage.getItem('usuarioName')
+validateUserAndPass.Lname = localStorage.getItem('usuarioLname')
+validateUserAndPass.photo = localStorage.getItem('usuarioPhoto')
+validateUserAndPass.email = localStorage.getItem('usuarioEmail')
+
+
 
 export default {
   name: 'App',
@@ -113,12 +124,13 @@ export default {
       let canva = document.getElementById('myCanvas');
         
       let newPaint={
-        name: 'name.value',
-        email: 'prueba',
+        name: validateUserAndPass.name = localStorage.getItem('usuarioName'),
+        email: validateUserAndPass.email = localStorage.getItem('usuarioEmail'),
         title: this.title,
         description: this.descripcion,
         img: canva.toDataURL('image/jpg')
       }
+    
       addPaint(newPaint)
       console.log(newPaint);
       this.title = ''
@@ -150,7 +162,7 @@ export default {
         <label for="">Title</label>
         <input v-model="title" type="text" placeholder="Title" class="mb-4">
         <label for="">Description</label>
-        <input v-model="description" type="text" placeholder="Description">
+        <input v-model="descripcion" type="text" placeholder="Description">
         <div class="options gap-1 d-flex flex-column justify-content-center align-items-center mt-5">
             <button @click.prevent="addPaint">Publish</button>
             <p>or</p>

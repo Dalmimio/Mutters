@@ -3,7 +3,7 @@ import { getFirestore, collection, query, getDocs, onSnapshot } from 'firebase/f
 import pinturas from '../store/pinturas.js'
 
 const db = getFirestore(app)
-const pinturasRef = collection(db, 'pinturas')
+const pinturasRef = collection(db, 'paints')
 
 const traerPinturas = () => {
     onSnapshot(pinturasRef, (snapshot) => {
@@ -11,10 +11,10 @@ const traerPinturas = () => {
     snapshot.forEach(doc => {
         const pintura = {
             id: doc.id,
-            autor: doc.data().autor,
-            name: doc.data().nombre,
-            description: doc.data().descripcion,
-            urlImage: doc.data().url
+            autor: doc.data().name,
+            name: doc.data().title,
+            description: doc.data().description,
+            urlImage: doc.data().img
         }
         pinturas.value.push(pintura)
     })
