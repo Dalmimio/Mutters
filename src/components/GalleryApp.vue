@@ -18,14 +18,6 @@ onMounted(() => {
 
 <template style="background-color: #f5f5f5">
 
-
-
-
-
-
-
-
-
     <div
         style="background-color: #f5f5f5; height: 100vh; display: flex; font-family: 'Quicksand'; flex-direction: column;">
 
@@ -50,7 +42,7 @@ onMounted(() => {
 
                 <NewComment />
 
-                <Comments class="w-100" />
+                <!-- <Comments class="w-100" /> -->
 
             </div>
 

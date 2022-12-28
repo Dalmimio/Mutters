@@ -129,7 +129,7 @@ const logOut = () => {
             </span>
           </RouterLink>
         </button>
-        <button v-if="validateUserAndPass.email" class="mt-4">
+        <button v-if="validateUserAndPass.email" class="mt-0">
           <div class="d-flex justify-content-center align-items-center">
             <div @click="logOut" class="btn colorBotonOut rounded-2">
               Log out
