@@ -57,6 +57,11 @@ const router = createRouter({
       name: 'sticky',
       component: () => import('../views/StickyNavView.vue')
     },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: () => import('../views/ProfileView.vue')
+    },
   ]
 })
 
