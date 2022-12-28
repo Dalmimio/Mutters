@@ -116,7 +116,7 @@ const logOut = () => {
 
         </button> -->
 
-        <button v-if="validateUserAndPass.email" class="user-button mt-5">
+        <button v-if="validateUserAndPass.email" class="user-button mt-1">
           <RouterLink to="/profile">
             <span class="d-flex gap-4">
               <img :src="validateUserAndPass.photo" class="rounded-5" />
@@ -144,7 +144,7 @@ const logOut = () => {
       <nav class="mobile-bottom-nav">
         <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
           <div class="mobile-bottom-nav__item-content">
-             <RouterLink to="./sticky"><img class="iconitos" src="../assets/img/home_icon.png" alt="" srcset=""></RouterLink> 
+            <RouterLink to="./sticky"><img class="iconitos" src="../assets/img/home_icon.png" alt="" srcset=""></RouterLink> 
 
           </div>
         </div>
