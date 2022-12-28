@@ -117,7 +117,10 @@ export default {
 <template>
     
     <div id="appaint">
-        <img class="img-flecha" src="../assets/img/flecha.png" alt="">
+        <RouterLink class="" to="./sticky">
+            <img class="img-flecha" src="../assets/img/flecha.png" alt="back">
+        </RouterLink>
+        
     <form action="" class="d-flex flex-column form-ult">
         <label for="">Title</label>
         <input type="text" placeholder="Title" class="mb-4">
