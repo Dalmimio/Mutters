@@ -13,7 +13,7 @@ import HeaderApp from './HeaderApp.vue';
     </div>
     <div class="verde">
       <div>
-        <h1>We are Smartech.</h1>
+        <h1>We are <img class="loguito" src="../assets/img/smartech_logo.gif" alt="" srcset="">.</h1>
       </div>
 
 
@@ -45,7 +45,7 @@ import HeaderApp from './HeaderApp.vue';
 
       </div>
       <div>
-        <RouterLink to="./muzzu">  <button>Your solution just a click away.</button></RouterLink>
+         <button>Your solution just a <a href="mailto:smartech.jade@gmail.com">click</a> away.</button>
       
 
       </div>
@@ -64,6 +64,12 @@ import HeaderApp from './HeaderApp.vue';
 <style scoped>
   .espacio-nav{
     width: 25vw;
+  }
+
+  .loguito{
+   width: 60%;
+ 
+
   }
 
 .sections {
@@ -105,12 +111,21 @@ button {
   padding:2vh
 }
 
+a{
+  color: #f730fc;
+  text-decoration: none;
+  background-color: black;
+  padding: 1vh;
+  border-radius: 5px;
 
+ 
+
+}
 
 .contenedor {
 
   display: flex;
-  background-color: white;
+  background-color: #f5f5f5;
   font-family: 'Quicksand';
 }
 
@@ -131,6 +146,10 @@ button {
 
   .espacio-nav{
     display: none;
+  }
+
+  a{
+    
   }
 
   .sections {
