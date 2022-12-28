@@ -6,13 +6,13 @@ import { signUpUser, signInUser } from '../firebase/loginUser&Pass.js'
 import { ref } from 'vue'
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 
-const email = ref('')
-const pass1 = ref('')
-const pass2 = ref('')
+const email = ref('leandro96@gmail.com')
+const pass1 = ref('123123')
+const pass2 = ref('123123')
 const emailLogin = ref('')
 const passLogin = ref('')
-const name = ref('')
-const Lname = ref('')
+const name = ref('Leandro')
+const Lname = ref('Rios')
 
 
 // FUNCTIONS
