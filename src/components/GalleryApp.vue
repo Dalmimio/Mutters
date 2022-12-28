@@ -1,98 +1,125 @@
 <script setup>
-
-
+import HeaderApp from './HeaderApp.vue';
 import { onMounted } from 'vue';
 
-import NewComment from '../components/NewComment.vue'
-import Comments from '../components/Comments.vue'
+import NewComment from './NewComment.vue'
+import Comments from './Comments.vue'
 import traerPinturas from '../firebase/pinturas.js'
 
 
 import pinturas from '../store/pinturas';
 
 onMounted(() => {
-    traerPinturas()
+  traerPinturas()
 })
 
 </script>
 
-<template style="background-color: #f5f5f5">
+<template>
 
 
+  <div id="new_gallery" class="contenedor">
+    <HeaderApp />
+    <div class="verde">
+      <div class="espacio-nav">
+
+        <div>
 
 
-
-
-
-
-
-    <div
-        style="background-color: #f5f5f5; height: 100vh; display: flex; font-family: 'Quicksand'; flex-direction: column;">
-
-
-        <div class="title w-100 d-flex flex-column align-items-center justify-content-center text-center">
+          <div>
             <h1>Exhibitions</h1>
-            <h5>Browse and comment on shared paintings or</h5> 
+            <h5>Browse and comment on shared paintings or</h5>
             <button class="btn btn-primary mt-2">create your own</button>
-        </div>
+          </div>
 
-        <div class="contenedorCards d-flex gap-5 flex-wrap justify-content-around mt-4">
+          <div class="contenedorCards d-flex gap-5 flex-wrap justify-content-around mt-4">
 
             <div class="card d-flex flex-column cardi align-items-center text-center" v-for="pintura in pinturas">
-                <span style="font-weight: bold;">Author: </span>{{ pintura.autor }}
-                <img class="w-100" :src="pintura.urlImage">
+              <span style="font-weight: bold;">Author: </span>{{ pintura.autor }}
+              <img class="w-100" :src="pintura.urlImage">
 
-                
 
-                <h4>{{ pintura.name }}</h4>
 
-                <p> {{ pintura.description }}</p>
+              <h4>{{ pintura.name }}</h4>
 
-                <NewComment />
+              <p> {{ pintura.description }}</p>
 
-                <Comments class="w-100" />
+              <NewComment />
+
+              <Comments class="w-100" />
 
             </div>
 
+          </div>
         </div>
 
 
 
 
+      </div>
+
     </div>
+  </div>
+
+
+
 
 
 </template>
 
 <style scoped>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.espacio-nav {
+  width: 25vw;
 }
 
-.new {
-    height: 5rem;
-    width: 12rem;
-    border-radius: 3rem;
-
+.verde {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75vw;
+  text-align: center;
+  min-height: 100vh;
+  justify-content: space-around;
+  padding: 2vh;
 }
 
-.title {
-    height: 20vh;
-    background-color: #f5f5f5;
-}
-
-img {
-    width: 6rem;
-    height: 10rem;
-}
-
-.cardi {
-    width: 15rem;
-}
 
 button {
-    width: 13rem;
+  background-color: #7abd87;
+  height: 5vh;
+  border: none;
+  border-radius: 10px;
+}
+
+
+
+.contenedor {
+
+  display: flex;
+  justify-content: flex-end;
+
+  font-family: 'Quicksand';
+}
+
+
+
+
+
+
+@media screen and (max-width: 425px) {
+
+  .verde {
+
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+    min-height: calc(100vh - 60px);
+
+
+
+
+
+  }
+
 }
 </style>

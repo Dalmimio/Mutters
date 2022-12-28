@@ -5,6 +5,7 @@ import MuzzuApp from '../components/MuzzuApp.vue';
 import HeaderApp from '../components/HeaderApp.vue';
 import stickyNav from '../components/stickyNav.vue';
 import SectionsApp from '../components/SectionsApp.vue';
+import NewGalleryApp from '../components/GalleryApp.vue';
 
 
 </script>
