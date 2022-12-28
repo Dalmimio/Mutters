@@ -38,43 +38,56 @@ const logOut = () => {
       <nav class="sin-texto">
         <button>
           <span>
-            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./"> <i
-                class="material-symbols-outlined"> home </i>
+            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./"> <img src="../assets/img/home_icon.png" alt="" srcset="">
               <span class="text-oculto">Home</span>
             </RouterLink>
-
           </span>
         </button>
+
         <button>
           <span>
 
-            <a class="w-100 d-flex justify-content-center align-items-center gap-3" href="#about_mutters"> <i
-                class="material-symbols-outlined"> tag </i>
+            <a class="w-100 d-flex justify-content-center align-items-center gap-3" href="./sticky#about_mutters"> <img src="../assets/img/info_icon.png" alt="" srcset="">
               <span class="text-oculto">About</span>
             </a>
           </span>
         </button>
+
         <button>
           <span>
-            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./about"> <i
-                class="material-symbols-outlined"> notifications </i>
-              <span class="text-oculto">Forum</span>
-            </RouterLink>
+            <a class="w-100 d-flex justify-content-center align-items-center gap-3" href="./sticky#muzzu"> <img src="../assets/img/hearth_icon.png" alt="" srcset="">
+              <span class="text-oculto">Muzzu</span>
+            </a>
           </span>
         </button>
+
         <button>
           <span>
-            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./contact"> <i
-                class="material-symbols-outlined"> email </i>
+            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./contact"> <img src="../assets/img/contact_icon.png" alt="" srcset="">
               <span class="text-oculto">Contact</span>
             </RouterLink>
           </span>
         </button>
         <button>
           <span>
-            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./gallery"> <i
-                class="material-symbols-outlined"> bookmark </i>
+            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./newpaint"> <img src="../assets/img/paint_icon.png" alt="" srcset="">
+              <span class="text-oculto">Paint</span>
+            </RouterLink>
+          </span>
+        </button>
+
+        <button>
+          <span>
+            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="./gallery"> <img src="../assets/img/gallery_icon.png" alt="" srcset="">
               <span class="text-oculto">Gallery</span>
+            </RouterLink>
+          </span>
+        </button>
+
+        <button>
+          <span>
+            <RouterLink class="w-100 d-flex justify-content-center align-items-center gap-3" to="../circle"> <img src="../assets/img/circle_icon.png" alt="" srcset="">
+              <span class="text-oculto">Breath</span>
             </RouterLink>
           </span>
         </button>
@@ -126,19 +139,25 @@ const logOut = () => {
       <nav class="mobile-bottom-nav">
         <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
           <div class="mobile-bottom-nav__item-content">
-            <a class="btn botonera"> <img class="iconitos" src="../assets/img/home.png" alt="" srcset=""> </a>
+             <RouterLink to="./sticky"><img class="iconitos" src="../assets/img/home_icon.png" alt="" srcset=""></RouterLink> 
 
           </div>
         </div>
         <div class="mobile-bottom-nav__item">
           <div class="mobile-bottom-nav__item-content">
-            <a class="btn botonera"><img class="iconitos" src="../assets/img/paint.png" alt="" srcset=""> </a>
+           <RouterLink to="./newpaint"><img class="iconitos" src="../assets/img/paint_icon.png" alt="" srcset=""></RouterLink> 
 
           </div>
         </div>
         <div class="mobile-bottom-nav__item">
           <div class="mobile-bottom-nav__item-content">
-            <a class="btn botonera"> <img class="iconitos" src="../assets/img/profile.png" alt="" srcset=""> </a>
+            <RouterLink to="./gallery" class="btn botonera"> <img class="iconitos" src="../assets/img/gallery_icon.png" alt="" srcset=""> </RouterLink>
+
+          </div>
+        </div>
+        <div class="mobile-bottom-nav__item">
+          <div class="mobile-bottom-nav__item-content">
+            <RouterLink to="./circle" class="btn botonera"> <img class="iconitos" src="../assets/img/circle_icon.png" alt="" srcset=""> </RouterLink>
 
           </div>
         </div>
@@ -174,7 +193,7 @@ body {
   display: none
 }
 
-span>a {
+span>a , Routerlink {
   text-decoration: none;
   color: black
 }
@@ -301,7 +320,7 @@ span>a {
 }
 
 .sidebar button img {
-  width: 40px;
+  width: 50px;
 
 
 }
