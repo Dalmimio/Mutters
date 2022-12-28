@@ -1,4 +1,3 @@
-
 <script>
 import DrawingToolbar from './DrawToolBar.vue'
 
@@ -114,8 +113,11 @@ export default {
   },
 }
 </script>
+
 <template>
+    
     <div id="appaint">
+        <img class="img-flecha" src="../assets/img/flecha.png" alt="">
     <form action="" class="d-flex flex-column form-ult">
         <label for="">Title</label>
         <input type="text" placeholder="Title" class="mb-4">
@@ -147,6 +149,13 @@ export default {
       margin: 0px;
       padding: 0px;
       box-sizing: border-box;
+    }
+    .img-flecha{
+        width: 50px;
+        align-self: flex-start;
+        position: absolute;
+        left: 0;
+        margin-left: 1rem;
     }
     #appaint {
       display: flex;
