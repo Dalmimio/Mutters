@@ -1,4 +1,3 @@
-
 <script>
 import DrawingToolbar from './DrawToolBar.vue'
 
@@ -15,7 +14,7 @@ export default {
       isDrawing: false,
       color: 'rgb(0,0,0)',
       drawStyle: 'freehand',
-      lineWidth: 5
+    //   lineWidth: 5
     }
   },
   methods: {
@@ -91,6 +90,18 @@ export default {
     setDrawingStyle(styleType) {
       this.drawStyle = styleType
     },
+    donwload(){
+        let canva = document.getElementById('myCanvas');
+        let dataURL = canva.toDataURL('image/jpg');
+        console.log(dataURL);
+        // let ctx = this.canvas.canvas.__vnode.ctx
+        // console.log(this.canvas.canvas.__vnode.ctx);
+        const enlace = document.createElement("a"); // crear elemento <a> para descargar la imagen
+        enlace.download = `${Date.now()}.jpg`; // pasando la fecha actual como valor de descarga del enlace
+        enlace.href = dataURL // pasando canvasData como valor del enlace href, esto convierte la img a Base64
+        enlace.click();// haciendo clic en el enlace para descargar la imagen
+  
+    }
    
   },
   mounted() {
@@ -98,12 +109,15 @@ export default {
     canvas.width = window.innerWidth * 0.5
     canvas.height = window.innerHeight *0.8
     this.canvas = canvas.getContext('2d')
-    console.log(this.canvas)
+    
   },
 }
 </script>
+
 <template>
+    
     <div id="appaint">
+        <img class="img-flecha" src="../assets/img/flecha.png" alt="">
     <form action="" class="d-flex flex-column form-ult">
         <label for="">Title</label>
         <input type="text" placeholder="Title" class="mb-4">
@@ -112,7 +126,7 @@ export default {
         <div class="options gap-1 d-flex flex-column justify-content-center align-items-center mt-5">
             <button>Send</button>
             <p>or</p>
-            <button>Donwload</button>
+            <button @click.prevent="donwload">Donwload</button>
         </div>
     </form>
       <canvas
@@ -125,7 +139,6 @@ export default {
       ></canvas>
       <DrawingToolbar 
       @color-selection="setDrawingColor" @style-selection="setDrawingStyle"/>
-      
     </div>
   </template>
   
@@ -136,6 +149,14 @@ export default {
       margin: 0px;
       padding: 0px;
       box-sizing: border-box;
+      font-family: 'Quicksand';
+    }
+    .img-flecha{
+        width: 100px;
+        align-self: flex-start;
+        position: absolute;
+        left: 0;
+        top: 0;
     }
     #appaint {
       display: flex;
